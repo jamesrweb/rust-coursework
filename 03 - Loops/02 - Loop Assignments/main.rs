@@ -1,14 +1,15 @@
 use std::io;
 
 fn evens(from: i32, to: i32) {
-  let mut start = from;
-  while start <= to {
-    if start % 2 == 0 {
-      println!("{} is even", start);
-      start += 2;
-    } else {
-      start += 1;
+  let mut counter = from;
+  while counter <= to {
+    if counter % 2 == 1 {
+      counter += 1;
+      continue;
     }
+
+    println!("{} is even", start);
+    counter += 2;
   }
 }
 
