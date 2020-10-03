@@ -46,8 +46,8 @@ fn quiz(question: String, answer: String, tries: i32) {
   }
 }
 
-fn count_digits(number: i32) {
-  println!("{} has {} digits", number, number.to_string().len());
+fn count_digits(num: f32) -> f32 {
+  return (num.log10() + 1.).floor();
 }
 
 fn main() {
@@ -57,5 +57,5 @@ fn main() {
     String::from("42"),
     3
   );
-  count_digits(1034829102);
+  count_digits(1034829102.);
 }
