@@ -8,7 +8,7 @@ fn evens(from: i32, to: i32) {
       continue;
     }
 
-    println!("{} is even", start);
+    println!("{} is even", counter);
     counter += 2;
   }
 }
