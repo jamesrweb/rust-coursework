@@ -12,6 +12,12 @@ If we want to create a new cargo application in the current directory though, th
   cargo init --name <name> --(bin|lib)
 ```
 
+If the directory name of the project is incompatible with cargos naming conventioned then we could add a custom name instead by running:
+
+```sh
+  cargo init <dirname> --name <name> --(bin|lib)
+```
+
 The `bin` option is for a regular binary application and the `lib` option is for building a library for use within a binary application, for example [Rocket](https://rocket.rs/) would be an example of a `lib` for use in your `bin` app.
 
 ## Running code
