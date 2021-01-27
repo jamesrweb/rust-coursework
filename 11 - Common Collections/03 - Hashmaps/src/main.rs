@@ -15,7 +15,7 @@ fn print_pairs(hashmap: &HashMap<String, i32>) {
 
 fn main() {
     let mut map = create_map();
-    println!("Simple: {:?}", &map);
+    println!("At creation: {:?}", &map);
 
     map.insert(String::from("z"), 1);
     println!("After update: {:?}", &map);

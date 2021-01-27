@@ -16,7 +16,7 @@ fn pre_typed() -> Vec<i32> {
     return v;
 }
 
-// Panics at runtim if index out of range
+// Panics at runtime if index out of range
 fn get_by_index(vector: &Vec<i32>, index: i32) -> i32 {
     return vector[index as usize];
 }
