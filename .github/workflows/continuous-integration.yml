@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Check formatting
+        run: for dir in */; do if [ -f "$dir/Cargo.toml" ]; then (cd "$dir" && cargo fmt --check); fi; done
+        shell: bash
+
+      - name: Lint
+        run: for dir in */; do if [ -f "$dir/Cargo.toml" ]; then (cd "$dir" && cargo clippy -- -D warnings); fi; done
+        shell: bash
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Test
+        run: for dir in */; do if [ -f "$dir/Cargo.toml" ]; then (cd "$dir" && cargo test); fi; done
+        shell: bash
