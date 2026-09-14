@@ -20,3 +20,19 @@ updates:
     commit-message:
       prefix: "🧹 chore"
       include: "scope"
+
+  - package-ecosystem: "rust-toolchain"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 1
+    labels:
+      - "rust"
+      - "dependencies"
+    groups:
+      rust-toolchain:
+        patterns:
+          - "*"
+    commit-message:
+      prefix: "🧹 chore"
+      include: "scope"
