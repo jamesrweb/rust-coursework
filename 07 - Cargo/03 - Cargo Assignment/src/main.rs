@@ -4,7 +4,7 @@ use std::io;
 
 fn main() {
     println!("Guess a number between 1 and 10!");
-    let secret = rand::thread_rng().gen_range(1, 11);
+    let secret = rand::rng().random_range(1..11);
 
     loop {
         println!("Input your guess:");

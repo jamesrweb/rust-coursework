@@ -4,7 +4,7 @@ fn create_map() -> HashMap<String, i32> {
     let mut scores = HashMap::new();
     scores.insert("x".to_owned(), 10);
     scores.insert("y".to_owned(), 20);
-    return scores;
+    scores
 }
 
 fn print_pairs(hashmap: &HashMap<String, i32>) {
@@ -15,10 +15,10 @@ fn print_pairs(hashmap: &HashMap<String, i32>) {
 
 fn main() {
     let mut map = create_map();
-    println!("At creation: {:?}", &map);
+    println!("At creation: {:?}", map);
 
     map.insert(String::from("z"), 1);
-    println!("After update: {:?}", &map);
+    println!("After update: {:?}", map);
 
     map.entry("t".to_owned()).or_insert(30);
 

@@ -18,7 +18,7 @@ fn user_value(request_text: &str) -> String {
         Err(error) => println!("error: {}", error),
     }
 
-    return value.trim().to_string();
+    value.trim().to_string()
 }
 
 fn main() {

@@ -14,5 +14,5 @@ fn main() -> Result<(), Error> {
     let mut content = String::new();
     file.read_to_string(&mut content)?;
     println!("{:?}", content);
-    return Ok(());
+    Ok(())
 }

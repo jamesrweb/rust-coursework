@@ -1,3 +1,3 @@
 pub fn carrot() -> String {
-  return String::from("carrot");
+    String::from("carrot")
 }

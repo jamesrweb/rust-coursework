@@ -18,17 +18,17 @@ fn user_value(request_text: &str) -> String {
         Err(error) => println!("error: {}", error),
     }
 
-    return value.trim().to_string();
+    value.trim().to_string()
 }
 
 fn documents() -> bool {
     let done = user_value("Did you submit your documents? (y/n)").to_ascii_lowercase();
-    return done == "y";
+    done == "y"
 }
 
 fn fees() -> bool {
     let done = user_value("Did you submit your fees? (y/n)").to_ascii_lowercase();
-    return done == "y";
+    done == "y"
 }
 
 fn main() {

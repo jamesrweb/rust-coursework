@@ -1,23 +1,23 @@
 pub fn login(username: &str) -> bool {
-  if username.len() == 0 {
-    return false;
-  }
+    if username.is_empty() {
+        return false;
+    }
 
-  return true;
+    true
 }
 
 pub fn logout(username: &str) -> bool {
-  if username.len() == 0 {
-    return false;
-  }
+    if username.is_empty() {
+        return false;
+    }
 
-  return true;
+    true
 }
 
 pub fn post(username: &str, content: &str) -> bool {
-  if username.len() == 0 && content.len() == 0 {
-    return false;
-  }
+    if username.is_empty() && content.is_empty() {
+        return false;
+    }
 
-  return true;
+    true
 }
