@@ -16,11 +16,11 @@ jobs:
       - uses: actions/checkout@v6
 
       - name: Check formatting
-        run: for dir in */; do if [ -f "$dir/Cargo.toml" ]; then (cd "$dir" && cargo fmt --check); fi; done
+        run: find . -name Cargo.toml -not -path "*/target/*" -print0 | while IFS= read -r -d '' manifest; do (cd "$(dirname "$manifest")" && cargo fmt --check); done
         shell: bash
 
       - name: Lint
-        run: for dir in */; do if [ -f "$dir/Cargo.toml" ]; then (cd "$dir" && cargo clippy -- -D warnings); fi; done
+        run: find . -name Cargo.toml -not -path "*/target/*" -print0 | while IFS= read -r -d '' manifest; do (cd "$(dirname "$manifest")" && cargo clippy -- -D warnings); done
         shell: bash
 
   test:
@@ -29,5 +29,5 @@ jobs:
       - uses: actions/checkout@v6
 
       - name: Test
-        run: for dir in */; do if [ -f "$dir/Cargo.toml" ]; then (cd "$dir" && cargo test); fi; done
+        run: find . -name Cargo.toml -not -path "*/target/*" -print0 | while IFS= read -r -d '' manifest; do (cd "$(dirname "$manifest")" && cargo test); done
         shell: bash
