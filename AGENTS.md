@@ -7,7 +7,7 @@
 2. **Quality gates:** Every change must pass the CI checks —
    `cargo fmt --check`, `cargo clippy -- -D warnings`, and `cargo test` in
    every nested project — before being considered complete.
-3. **Documentation:** Update `readme.md`, `AGENTS.md`, configuration files, and
+3. **Documentation:** Update `README.md`, `AGENTS.md`, configuration files, and
    any other documentation affected by your changes. Clean as you go — take
    ownership of every file you touch.
 4. **PR descriptions:** When asked, create `PR_DESCRIPTION.md` (gitignored).
