@@ -1,3 +1,21 @@
 main.exe
 main.pdb
 target/
+.idea/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# npm/yarn lockfiles (pnpm-managed repositories)
+package-lock.json
+yarn.lock
+
+# PR description draft (gitignored)
+PR_DESCRIPTION.md
